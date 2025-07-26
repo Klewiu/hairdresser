@@ -1,0 +1,9 @@
+.full-height-slider {
+  height: 100vh;
+}
+
+.splide__slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}

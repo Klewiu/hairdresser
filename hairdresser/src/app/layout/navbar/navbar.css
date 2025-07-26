@@ -1,0 +1,7 @@
+:host {
+  position: absolute; /* albo 'fixed', jeśli chcesz, by zawsze był na górze */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
