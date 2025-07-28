@@ -5,3 +5,25 @@
   width: 100%;
   z-index: 1000;
 }
+@media (max-width: 767px) {
+  .fixed-bottom-right {
+    position: fixed;
+    bottom: 1.5rem;   /* odległość od dołu */
+    right: 1.5rem;    /* odległość od prawej */
+    z-index: 50;      /* żeby był nad innymi elementami */
+  }
+  /* Ukryj oryginalny przycisk w navbarze */
+  .navbar-online-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Na desktopie pokazuj oryginalny, ukryj ten "dolny" */
+  .fixed-bottom-right {
+    display: none;
+  }
+  .navbar-online-btn {
+    display: flex;  /* lub inline-flex */
+  }
+}
