@@ -25,11 +25,13 @@
               }
             ],
             "styles": [
+              "node_modules/aos/dist/aos.css",
               "src/styles.css",
                "node_modules/@splidejs/splide/dist/css/splide.min.css"
             
             ],
             "scripts": [
+              "node_modules/aos/dist/aos.js",
               "node_modules/@splidejs/splide/dist/js/splide.min.js",
               "node_modules/flowbite/dist/flowbite.js"
             ]

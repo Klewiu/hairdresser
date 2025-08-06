@@ -1,3 +1,6 @@
+
+
+
 :host {
   position: absolute; /* albo 'fixed', jeśli chcesz, by zawsze był na górze */
   top: 0;
@@ -26,4 +29,12 @@
   .navbar-online-btn {
     display: flex;  /* lub inline-flex */
   }
+}
+
+nav {
+  overflow-x: hidden;
+}
+
+nav * {
+  max-width: 100%;
 }
