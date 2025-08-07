@@ -1,4 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+/* !prevents overflow-x / aos issue */
+[data-aos] {
+  will-change: transform;
+  overflow-x: hidden;
+}
