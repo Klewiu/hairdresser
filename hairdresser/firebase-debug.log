@@ -1,0 +1,22 @@
+[debug] [2025-08-07T22:06:50.626Z] ----------------------------------------------------------------------
+[debug] [2025-08-07T22:06:50.635Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kubak\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-08-07T22:06:50.636Z] CLI Version:   14.6.0
+[debug] [2025-08-07T22:06:50.636Z] Platform:      win32
+[debug] [2025-08-07T22:06:50.636Z] Node Version:  v22.16.0
+[debug] [2025-08-07T22:06:50.639Z] Time:          Fri Aug 08 2025 00:06:50 GMT+0200 (czas środkowoeuropejski letni)
+[debug] [2025-08-07T22:06:50.640Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-07T22:06:51.188Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-07T22:06:51.189Z] > authorizing via signed-in user (kuba.klewicki@gmail.com)
+[debug] [2025-08-07T22:06:51.189Z] [iam] checking project hairtouch-224c9 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-07T22:06:51.192Z] Checked if tokens are valid: true, expires at: 1754606591591
+[debug] [2025-08-07T22:06:51.192Z] Checked if tokens are valid: true, expires at: 1754606591591
+[debug] [2025-08-07T22:06:51.194Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions [none]
+[debug] [2025-08-07T22:06:51.194Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions x-goog-quota-user=projects/hairtouch-224c9
+[debug] [2025-08-07T22:06:51.194Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-07T22:06:52.165Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions 200
+[debug] [2025-08-07T22:06:52.166Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-07T22:06:52.168Z] Checked if tokens are valid: true, expires at: 1754606591591
+[debug] [2025-08-07T22:06:52.168Z] Checked if tokens are valid: true, expires at: 1754606591591
+[debug] [2025-08-07T22:06:52.170Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hairtouch-224c9 [none]
+[debug] [2025-08-07T22:06:52.533Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hairtouch-224c9 200

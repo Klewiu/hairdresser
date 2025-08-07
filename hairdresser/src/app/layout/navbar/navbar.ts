@@ -1,16 +1,25 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
-  standalone: true
+  standalone: true,
+   imports: [CommonModule],
 })
 export class Navbar {
-  scrollTo(id: string) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+  isMenuOpen = false;
+
+scrollTo(sectionId: string): void {
+  const el = document.getElementById(sectionId);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
   }
+  this.isMenuOpen = false;
+}
+
+get isMobile(): boolean {
+  return window.innerWidth < 768;
+}
 }
