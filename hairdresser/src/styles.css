@@ -3,10 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-/* !prevents overflow-x / aos issue */
-[data-aos] {
-  will-change: transform;
+html {
   overflow-x: hidden;
 }
+
+body {
+  overflow-x: clip; /* avoids extra scrollbars */
+}
+
+
+
+
+.reveal-wrap { overflow-x: clip; }
