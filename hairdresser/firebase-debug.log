@@ -20,3 +20,4 @@
 [debug] [2025-08-07T22:06:52.168Z] Checked if tokens are valid: true, expires at: 1754606591591
 [debug] [2025-08-07T22:06:52.170Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hairtouch-224c9 [none]
 [debug] [2025-08-07T22:06:52.533Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hairtouch-224c9 200
+[debug] [2025-08-07T22:06:52.533Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/hairtouch-224c9 {"projectId":"hairtouch-224c9","projectNumber":"371358123202","displayName":"HairTouch","name":"projects/hairtouch-224c9","resources":{"hostingSite":"hairtouch-224c9"},"state":"ACTIVE","etag":"1_8c592d4e-7069-4a20-b4d8-7aec0c867e76"}
