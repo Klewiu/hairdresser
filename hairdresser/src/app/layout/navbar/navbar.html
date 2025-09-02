@@ -1,4 +1,4 @@
-<nav class="bg-gradient-to-r from-white/60 to-[#d3ab88] backdrop-blur-sm fixed w-full z-20 top-0 start-0 shadow-lg font-sans">
+<nav class="bg-gradient-to-r from-white/60 to-[#6c3b11] backdrop-blur-sm fixed w-full z-20 top-0 start-0 shadow-lg font-sans">
   <div class="max-w-screen-xl mx-auto px-6 py-3 flex flex-col xl:flex-row items-center justify-between">
 
     <!-- Logo -->
@@ -8,20 +8,32 @@
       </a>
 
       <!-- Hamburger -->
-      <button (click)="isMenuOpen = !isMenuOpen"
-              class="xl:hidden text-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-400">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-             xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+    <!-- Hamburger -->
+<button (click)="isMenuOpen = !isMenuOpen"
+        class="xl:hidden text-neutral-800 focus:outline-none">
+  <ng-container *ngIf="!isMenuOpen; else closeIcon">
+    <!-- Ikona hamburger (3 kreski) -->
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </ng-container>
+  <ng-template #closeIcon>
+    <!-- Ikona X -->
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </ng-template>
+</button>
     </div>
 
     <!-- Menu -->
     <ul
       [ngClass]="{
-        'flex flex-col gap-4 items-center mt-4': isMenuOpen,     
+        'grid grid-cols-2 gap-4 items-center mt-4': isMenuOpen,      
         'hidden': !isMenuOpen                               
       }"
       class="titillium-web-regular xl:flex xl:flex-row xl:gap-6 xl:items-center text-sm xl:text-lg text-neutral-800 font-medium tracking-wide xl:ml-6 hidden"
