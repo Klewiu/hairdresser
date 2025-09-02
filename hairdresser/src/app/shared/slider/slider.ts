@@ -18,6 +18,8 @@ export class Slider implements AfterViewInit {
       height: '100vh',
       cover: true,
       pauseOnHover: false,
+      drag: false,      
+      keyboard: false,
       speed:1200,
     }).mount();
   }
