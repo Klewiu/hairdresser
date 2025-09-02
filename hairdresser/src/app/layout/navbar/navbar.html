@@ -1,17 +1,15 @@
 <nav class="bg-gradient-to-r from-white/60 to-[#d3ab88] backdrop-blur-sm fixed w-full z-20 top-0 start-0 shadow-lg font-sans">
-  <div class="max-w-screen-xl mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
+  <div class="max-w-screen-xl mx-auto px-6 py-3 flex flex-col xl:flex-row items-center justify-between">
 
     <!-- Logo -->
-    <div class="flex items-center justify-between w-full md:w-auto mb-1 md:mb-0">
+    <div class="flex items-center justify-between w-full xl:w-auto mb-1 xl:mb-0 gap-4">
       <a href="/">
-        <img src="/logo2.png"
-             class="h-20 md:h-20"
-             alt="Hair Touch Logo" />
+        <img src="/Logo_HairTouch_resized.jpg" class="h-20 xl:h-20 max-w-[160px]" alt="Hair Touch Logo" />
       </a>
 
       <!-- Hamburger -->
       <button (click)="isMenuOpen = !isMenuOpen"
-              class="md:hidden text-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-400">
+              class="xl:hidden text-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-400">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
              xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -23,45 +21,33 @@
     <!-- Menu -->
     <ul
       [ngClass]="{
-        'flex flex-col gap-4 items-center mt-2': isMenuOpen,     
+        'flex flex-col gap-4 items-center mt-4': isMenuOpen,     
         'hidden': !isMenuOpen                               
       }"
-      class="titillium-web-regular md:flex md:flex-row md:gap-10 md:items-center text-sm md:text-xl text-neutral-800 font-medium tracking-wide md:ml-6 hidden"
+      class="titillium-web-regular xl:flex xl:flex-row xl:gap-6 xl:items-center text-sm xl:text-lg text-neutral-800 font-medium tracking-wide xl:ml-6 hidden"
     >
-      <li>
-        <button (click)="scrollTo('o nas'); isMenuOpen = false" class=" rounded-md relative h-12 w-40 overflow-hidden border border-black shadow-2xl hover:text-white hover:shadow-black before:transition-all before:duration-300 before:absolute before:left-0 before:-ml-2 before:h-48 before:w-48 before:origin-top-right before:-translate-x-full before:translate-y-12 before:-rotate-90 before:bg-gray-900 hover:before:-rotate-180">
-          <span class="relative z-10">O NAS</span>
-        </button>
-      </li>
-      <li>
-        <button (click)="scrollTo('usługi'); isMenuOpen = false" class="rounded-md relative h-12 w-40 overflow-hidden border border-black shadow-2xl hover:text-white hover:shadow-black before:transition-all before:duration-300 before:absolute before:left-0 before:-ml-2 before:h-48 before:w-48 before:origin-top-right before:-translate-x-full before:translate-y-12 before:-rotate-90 before:bg-gray-900 hover:before:-rotate-180">
-          <span class="relative z-10">USŁUGI</span>
-        </button>
-      </li>
-      <li>
-        <button (click)="scrollTo('cennik'); isMenuOpen = false" class="rounded-md relative h-12 w-40 overflow-hidden border border-black shadow-2xl hover:text-white hover:shadow-black before:transition-all before:duration-300 before:absolute before:left-0 before:-ml-2 before:h-48 before:w-48 before:origin-top-right before:-translate-x-full before:translate-y-12 before:-rotate-90 before:bg-gray-900 hover:before:-rotate-180">
-          <span class="relative z-10">CENNIK</span>
-        </button>
-      </li>
-      <li>
-        <button (click)="scrollTo('kontakt'); isMenuOpen = false" class="rounded-md relative h-12 w-40 overflow-hidden border border-black shadow-2xl hover:text-white hover:shadow-black before:transition-all before:duration-300 before:absolute before:left-0 before:-ml-2 before:h-48 before:w-48 before:origin-top-right before:-translate-x-full before:translate-y-12 before:-rotate-90 before:bg-gray-900 hover:before:-rotate-180">
-          <span class="relative z-10">KONTAKT</span>
+      <li *ngFor="let section of ['o nas', 'usługi', 'cennik', 'kontakt']">
+        <button (click)="scrollTo(section); isMenuOpen = false" 
+                class="rounded-md relative h-12 w-36 overflow-hidden border border-black shadow-2xl hover:text-white hover:shadow-black before:transition-all before:duration-300 before:absolute before:left-0 before:-ml-2 before:h-48 before:w-48 before:origin-top-right before:-translate-x-full before:translate-y-12 before:-rotate-90 before:bg-gray-900 hover:before:-rotate-180">
+          <span class="relative z-10 uppercase">{{ section }}</span>
         </button>
       </li>
     </ul>
 
     <!-- Button desktop -->
-    <div class="hidden md:block titillium-web-regular">
-      <button class="rounded-md relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-pink-600 before:duration-500 before:ease-out hover:shadow-pink-600 hover:before:h-56 hover:before:w-56">
-      <span class="relative z-10">ZAPISY ONLINE</span>
-      </button>
-    </div>
+    <div class="hidden xl:block titillium-web-regular">
+  <button (click)="openBooksy()"
+          class="rounded-md relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-pink-600 before:duration-500 before:ease-out hover:shadow-pink-600 hover:before:h-56 hover:before:w-56">
+    <span class="relative z-10">ZAPISY ONLINE</span>
+  </button>
+</div>
   </div>
 </nav>
 
 <!-- Floating button mobile -->
 <button type="button"
-        class=" titillium-web-regular-italic md:hidden fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#b48b6a] hover:bg-[#9a7355] text-white transition-colors px-5 py-2 rounded-full text-sm font-semibold shadow-sm shadow-black/30">
+        (click)="openBooksy()"
+        class="titillium-web-regular-italic xl:hidden fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#b48b6a] hover:bg-[#9a7355] text-white transition-colors px-5 py-2 rounded-full text-sm font-semibold shadow-sm shadow-black/30">
   ZAPISY ONLINE
   <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none"
        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

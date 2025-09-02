@@ -22,4 +22,10 @@ scrollTo(sectionId: string): void {
 get isMobile(): boolean {
   return window.innerWidth < 768;
 }
+
+openBooksy() {
+  window.open('https://booksy.com/pl-pl/dl/show-business/294506?utm_medium=c2c_referral', '_blank');
+}
+
+
 }

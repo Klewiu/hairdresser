@@ -1,1 +1,12 @@
 
+.booksy-link .booksy-icon {
+  width: 2rem;  /* w-8 */
+  height: 2rem;
+  filter: grayscale(100%) brightness(0) invert(0); /* szary, czarny */
+  transition: filter 0.3s ease;
+}
+
+/* na hover zmieniamy kolor na różowy przy pomocy filtra */
+.booksy-link:hover .booksy-icon {
+  filter: brightness(0) saturate(100%) invert(37%) sepia(92%) saturate(5533%) hue-rotate(314deg) brightness(96%) contrast(95%);
+}
