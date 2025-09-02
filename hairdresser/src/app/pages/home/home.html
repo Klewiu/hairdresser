@@ -1,19 +1,20 @@
 <!-- Full Page Spinner Loader -->
-<div
-  *ngIf="isLoading"
-  [ngClass]="{'fade-out': !isLoading}"
-  class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white"
->
-  <!-- Spinner -->
+@if (isLoading) {
   <div
-    class="w-12 h-12 border-4 border-[#b48b6a] border-t-transparent rounded-full animate-spin mb-4"
-  ></div>
+    [ngClass]="{'fade-out': !isLoading}"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white"
+  >
+    <!-- Spinner -->
+    <div
+      class="w-12 h-12 border-4 border-[#b48b6a] border-t-transparent rounded-full animate-spin mb-4"
+    ></div>
 
-  <!-- Loading Text -->
-  <p class="text-[#b48b6a] font-semibold text-lg tracking-widest">
-    ...
-  </p>
-</div>
+    <!-- Loading Text -->
+    <p class="text-[#b48b6a] font-semibold text-lg tracking-widest">
+      ...
+    </p>
+  </div>
+}
 
 <!-- SLIDER IS HOME -->
 <app-slider id="home"></app-slider>
@@ -26,7 +27,7 @@
       O nas
     </h2>
     <p class="mt-4 text-white max-w-2xl drop-shadow-md" data-sr="fade-up" data-sr-delay="150">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque vitae justo vitae laoreet. Fusce commodo nibh orci, vel aliquet massa aliquet ut. Suspendisse egestas sed mauris et dignissim. Nulla lobortis augue sollicitudin tortor varius, quis placerat ante rhoncus. Mauris imperdiet placerat arcu, vitae tempus sapien posuere sit amet. Duis imperdiet, nisl sit amet interdum ultricies, mi orci imperdiet risus, in semper sem elit et tellus. Sed hendrerit velit in nibh dictum viverra. Etiam ut felis sed diam imperdiet pulvinar ac nec magna. Proin at metus ante. Donec quis erat nec metus viverra dignissim non luctus tortor. Cras non massa lacinia, suscipit purus eget, pharetra eros. Nullam auctor augue sed turpis eleifend suscipit.
+      HAIR TOUCH to salon fryzjerski z wyjątkowym klimatem i ciepłą, przyjazną atmosferą, w którym każdy klient poczuje się zaopiekowany. Oferujemy usługi na najwyższym poziomie, z pełnym zaangażowaniem i indywidualnym podejściem. Zawsze poświęcamy czas na dokładną konsultację i uważnie słuchamy Twoich potrzeb, aby dobrać idealną fryzurę i zadbać o kondycję Twoich włosów. W HAIR TOUCH zrelaksujesz się przy pysznej kawie i dobrej muzyce, a my zadbamy o każdy szczegół Twojej stylizacji..
     </p>
   </div>
 </section>
@@ -46,47 +47,195 @@
     </p>
 
     <!-- Bulletpoints with Google Material Icons -->
-<ul class="mt-6 space-y-3">
-  <li class="flex items-center" data-sr="fade-up" data-sr-delay="0">
-    <span class="material-symbols-outlined text-[#9a7355] text-xl sm:text-2xl mr-2 sm:mr-3">
-      content_cut
-    </span>
-    <span class="text-gray-700 text-sm sm:text-base">
-      Profesjonalne strzyżenie damskie i męskie
-    </span>
-  </li>
+    <ul class="mt-6 space-y-3">
+      <li class="flex items-center" data-sr="fade-up" data-sr-delay="0">
+        <span class="material-symbols-outlined text-[#9a7355] text-xl sm:text-2xl mr-2 sm:mr-3">
+          content_cut
+        </span>
+        <span class="text-gray-700 text-sm sm:text-base">
+          Profesjonalne strzyżenie damskie i męskie
+        </span>
+      </li>
 
-  <li class="flex items-center" data-sr="fade-up" data-sr-delay="100">
-    <span class="material-symbols-outlined text-[#9a7355] text-xl sm:text-2xl mr-2 sm:mr-3">
-      self_care
-    </span>
-    <span class="text-gray-700 text-sm sm:text-base">
-      Stylizacja włosów i pielęgnacja
-    </span>
-  </li>
+      <li class="flex items-center" data-sr="fade-up" data-sr-delay="100">
+        <span class="material-symbols-outlined text-[#9a7355] text-xl sm:text-2xl mr-2 sm:mr-3">
+          self_care
+        </span>
+        <span class="text-gray-700 text-sm sm:text-base">
+          Stylizacja włosów i pielęgnacja
+        </span>
+      </li>
 
-  <li class="flex items-center" data-sr="fade-up" data-sr-delay="200">
-    <span class="material-symbols-outlined text-[#9a7355] text-xl sm:text-2xl mr-2 sm:mr-3">
-      spa
-    </span>
-    <span class="text-gray-700 text-sm sm:text-base">
-      Zabiegi upiększające
-    </span>
-  </li>
-</ul>
+      <li class="flex items-center" data-sr="fade-up" data-sr-delay="200">
+        <span class="material-symbols-outlined text-[#9a7355] text-xl sm:text-2xl mr-2 sm:mr-3">
+          spa
+        </span>
+        <span class="text-gray-700 text-sm sm:text-base">
+          Zabiegi upiększające
+        </span>
+      </li>
+    </ul>
   </div>
 </section>
 
 <!-- CENNIK SECTION -->
-<section id="cennik" class="h-screen relative ">
-  <img src="scissors.webp" alt="Red Hair" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center px-4">
-    <h2 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg" >
+<section id="cennik" class="relative min-h-screen scroll-mt-24">
+  <!-- Background -->
+  <img
+    src="scissors.webp"
+    alt="Red Hair"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Content wrapper -->
+  <div class="relative z-10 flex flex-col items-center justify-center px-4 py-16">
+    <h2 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg text-center">
       Cennik
     </h2>
-    <p class="mt-4 text-white max-w-2xl drop-shadow-md" data-sr="fade-up" data-sr-delay="200">
-      Mauris in semper tortor. Proin tincidunt tincidunt augue, vel scelerisque nibh venenatis auctor. In placerat consectetur nisi, sed condimentum arcu. Mauris vel iaculis augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur pretium quam sit amet orci ultrices blandit. Nunc eget fringilla tellus. Suspendisse non mi velit. Vestibulum sodales porta placerat. Sed dictum nec sapien at mattis. Nunc eget varius nibh. Etiam pharetra libero tortor, quis placerat enim pretium quis. Proin mollis lorem purus, rhoncus scelerisque erat placerat nec.
+    <p
+      class="mt-4 text-white/90 max-w-3xl drop-shadow-md text-center"
+      data-sr="fade-up"
+      data-sr-delay="200"
+    >
+      Poniżej znajdziesz orientacyjny cennik naszych usług. Dokładna wycena zostanie ustalona podczas darmowej konsultacji, z uwzględnieniem indywidualnych potrzeb i kondycji Twoich włosów.
+      Szczegółowe ceny oraz dostępne usługi znajdziesz w zakładce ZAPISY ONLINE.
     </p>
+
+    <!-- Pricing card -->
+    <div
+      class="mt-10 w-full max-w-6xl bg-white/95 dark:bg-gray-800/95 backdrop-blur rounded-2xl shadow-xl overflow-hidden"
+    >
+      <div class="lg:flex items-stretch">
+        <!-- Left intro -->
+        <div class="lg:w-5/12 w-full p-6 md:p-10">
+
+        <h3 class="mt-2 text-3xl md:text-4xl font-bold leading-tight text-gray-800 dark:text-white text-center lg:text-left">
+  Nasze Ceny
+</h3>
+<p class="mt-4 text-gray-600 dark:text-gray-200 text-center lg:text-left">
+  Sprawdź przykładowe warianty z naszej oferty i dopasuj usługę do swoich potrzeb.
+</p>
+
+          <div class="mt-3 h-px bg-gray-100 dark:bg-gray-700"></div>
+          <div class="mt-3 flex flex-wrap gap-2">
+          </div>
+        </div>
+
+        <!-- Right: Content area -->
+        <div class="lg:w-7/12 w-full border-t lg:border-t-0 lg:border-l border-gray-100 dark:border-gray-700">
+          <div class="flex">
+            <!-- Desktop: single tab content -->
+            <div class="hidden lg:block flex-1 p-6 md:p-10">
+              <h4 class="text-2xl font-semibold text-gray-800 dark:text-white">
+                {{ currentTab?.label }}
+              </h4>
+              <p class="mt-2 text-gray-600 dark:text-gray-200">
+                {{ currentTab?.description }}
+              </p>
+
+              <!-- Price list -->
+              <div class="mt-6 space-y-3">
+                @for (item of (currentTab?.items ?? []); track item.name) {
+                  <div
+                    class="flex items-start justify-between rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-4"
+                  >
+                    <div class="pr-4">
+                      <div class="font-medium text-gray-900 dark:text-white">
+                        {{ item.name }}
+                      </div>
+                      @if (item.note) {
+                        <div class="text-sm text-gray-500 dark:text-gray-300">
+                          {{ item.note }}
+                        </div>
+                      }
+                    </div>
+                    <div class="text-right">
+                      <div class="font-semibold text-[#9a7355]">
+                        {{ item.price }}
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+
+              <!-- CTA / info -->
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                <span class="text-sm text-gray-600 dark:text-gray-300">
+                  Ceny mogą ulec zmianie po konsultacji.
+                </span>
+              </div>
+            </div>
+
+            <!-- Mobile: show ALL categories stacked -->
+            <div class="lg:hidden flex-1 p-6 md:p-15 space-y-10">
+              @for (t of tabs; track t.id) {
+                <div>
+                  <h4 class="text-2xl font-semibold text-gray-800">
+                    {{ t.label }}
+                  </h4>
+                  <p class="mt-2 text-gray-600">
+                    {{ t.description }}
+                  </p>
+
+                  <div class="mt-4 space-y-3">
+                    @for (item of t.items; track item.name) {
+                      <div
+                        class="flex items-start justify-between rounded-xl border border-gray-100 bg-white p-4"
+                      >
+                        <div class="pr-4">
+                          <div class="font-medium text-gray-900">
+                            {{ item.name }}
+                          </div>
+                          @if (item.note) {
+                            <div class="text-sm text-gray-500">
+                              {{ item.note }}
+                            </div>
+                          }
+                        </div>
+                        <div class="text-right">
+                          <div class="font-semibold text-[#9a7355]">
+                            {{ item.price }}
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                </div>
+              }
+
+              <!-- CTA / info (mobile) -->
+              <div class="pt-2">
+                <span class="ml-3 text-sm text-gray-600 italic">
+                  Ceny mogą ulec zmianie po konsultacji.
+                </span>
+              </div>
+            </div>
+
+<!-- Desktop vertical tabs -->
+<div class="hidden lg:flex w-52 border-l border-gray-100 dark:border-gray-700">
+  <div class="flex flex-col w-full gap-2 p-4">
+    @for (t of tabs; track t.id) {
+      <button
+        (click)="activeTab = t.id"
+        class="relative w-full text-left px-5 py-3 rounded-2xl transition-all duration-200 ease-out
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9a7355]/40"
+        [ngClass]="{
+          'bg-gray-800 text-white font-medium shadow-lg ring-1 ring-black/10 dark:ring-white/10 scale-[1.01]': activeTab === t.id,
+          'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 hover:shadow hover:translate-x-0.5 active:scale-[0.99]': activeTab !== t.id
+        }"
+      >
+        {{ t.label }}
+      </button>
+    }
+  </div>
+</div>
+          </div> <!-- /flex -->
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
