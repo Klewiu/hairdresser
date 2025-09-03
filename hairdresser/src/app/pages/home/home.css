@@ -6,7 +6,7 @@
   transition: filter 0.3s ease;
 }
 
-/* na hover zmieniamy kolor na różowy przy pomocy filtra */
+/* na hover zmieniamy kolor na zielony przy pomocy filtra */
 .booksy-link:hover .booksy-icon {
-  filter: brightness(0) saturate(100%) invert(37%) sepia(92%) saturate(5533%) hue-rotate(314deg) brightness(96%) contrast(95%);
+  filter: brightness(0) saturate(100%) invert(48%) sepia(93%) saturate(749%) hue-rotate(74deg) brightness(97%) contrast(92%);
 }
