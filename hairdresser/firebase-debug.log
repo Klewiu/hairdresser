@@ -1,0 +1,33 @@
+[debug] [2025-09-03T06:34:10.616Z] ----------------------------------------------------------------------
+[debug] [2025-09-03T06:34:10.634Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kubak\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-09-03T06:34:10.635Z] CLI Version:   14.6.0
+[debug] [2025-09-03T06:34:10.636Z] Platform:      win32
+[debug] [2025-09-03T06:34:10.636Z] Node Version:  v22.16.0
+[debug] [2025-09-03T06:34:10.637Z] Time:          Wed Sep 03 2025 08:34:10 GMT+0200 (czas środkowoeuropejski letni)
+[debug] [2025-09-03T06:34:10.638Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-09-03T06:34:11.408Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-03T06:34:11.408Z] > authorizing via signed-in user (kuba.klewicki@gmail.com)
+[debug] [2025-09-03T06:34:11.409Z] [iam] checking project hairtouch-224c9 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-09-03T06:34:11.411Z] Checked if tokens are valid: true, expires at: 1756884121867
+[debug] [2025-09-03T06:34:11.411Z] Checked if tokens are valid: true, expires at: 1756884121867
+[debug] [2025-09-03T06:34:11.413Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions [none]
+[debug] [2025-09-03T06:34:11.413Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions x-goog-quota-user=projects/hairtouch-224c9
+[debug] [2025-09-03T06:34:11.414Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-09-03T06:34:12.373Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions 200
+[debug] [2025-09-03T06:34:12.373Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/hairtouch-224c9:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-09-03T06:34:12.375Z] Checked if tokens are valid: true, expires at: 1756884121867
+[debug] [2025-09-03T06:34:12.375Z] Checked if tokens are valid: true, expires at: 1756884121867
+[debug] [2025-09-03T06:34:12.376Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hairtouch-224c9 [none]
+[debug] [2025-09-03T06:34:12.702Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hairtouch-224c9 200
+[debug] [2025-09-03T06:34:12.703Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/hairtouch-224c9 {"projectId":"hairtouch-224c9","projectNumber":"371358123202","displayName":"HairTouch","name":"projects/hairtouch-224c9","resources":{"hostingSite":"hairtouch-224c9"},"state":"ACTIVE","etag":"1_8c592d4e-7069-4a20-b4d8-7aec0c867e76"}
+[info] 
+   Thank you for trying our early preview of Angular support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/angular
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
