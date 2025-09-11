@@ -187,7 +187,7 @@ export class Home implements OnInit, AfterViewInit {
     const sr = ScrollReveal();
     const base = {
       distance: '24px',
-      duration: 700,
+      duration: 500,
       easing: 'ease-in-out',
       reset: false,
       mobile: true,
